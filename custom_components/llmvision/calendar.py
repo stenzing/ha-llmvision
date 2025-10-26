@@ -190,7 +190,7 @@ class Timeline(CalendarEntity):
             self._events, key=lambda event: event.start, reverse=True
         )
         # Set limit to 10 newest events to improve performance
-        events = sorted_events[:10]
+        events = sorted_events[:20]
         return {
             "events": [event.summary for event in events],
             "starts": [event.start for event in events],
